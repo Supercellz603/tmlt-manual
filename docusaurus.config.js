@@ -1,0 +1,67 @@
+// @ts-check
+import {themes as prismThemes} from 'prism-react-renderer';
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
+  title: 'Tutorial',
+  tagline: '',
+  favicon: 'img/favicon.ico',
+
+  future: {
+    v4: true,
+  },
+
+  url: 'https://Supercellz603.github.io',
+  baseUrl: '/my-docs/',
+
+  organizationName: 'Supercellz603',
+  projectName: 'my-docs',
+
+  onBrokenLinks: 'throw',
+
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
+
+  presets: [
+    [
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        docs: {
+          routeBasePath: '/',        // ← เปิดหน้า docs เป็นหน้าแรกเลย
+          sidebarPath: './sidebars.js',
+        },
+        blog: false,                 // ← ปิด blog ออก
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+      }),
+    ],
+  ],
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
+      navbar: {
+        title: 'Tutorial',
+        logo: {
+          alt: 'Logo',
+          src: 'img/TMLT_main.png',
+        },
+        items: [],  // ← เอา Tutorial ออกจาก navbar แล้ว
+      },
+      footer: undefined,             // ← เอา footer ออก
+      prism: {
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+      },
+    }),
+};
+
+export default config;
