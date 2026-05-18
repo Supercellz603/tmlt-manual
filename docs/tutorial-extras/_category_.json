@@ -1,7 +1,6 @@
 {
-  "label": "Tutorial - Extras",
-  "position": 3,
-  "link": {
-    "type": "generated-index"
-  }
+  "label": "คู่มือการใช้งาน TMLT V2.0",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": false
 }

@@ -8,7 +8,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   future: {
-    v4: true,
+    v4: false,
   },
 
   url: 'https://Supercellz603.github.io',
