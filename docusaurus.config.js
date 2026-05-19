@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Tutorial',
   tagline: '',
-  favicon: 'img/touch-icon.png',
+  favicon: 'img/TMLT_icon.ico',
 
   future: {
     v4: false,
