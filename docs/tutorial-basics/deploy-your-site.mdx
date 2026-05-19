@@ -2,30 +2,235 @@
 sidebar_position: 5
 ---
 
-# Deploy your site
+# บทที่ 5 โครงสร้าง Release ไฟล์ TMLT
 
-Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
+## Release File คืออะไร
 
-It builds your site as simple **static HTML, JavaScript and CSS files**.
+Release File คือ ชุดไฟล์มาตรฐานของ TMLT ที่จัดส่งให้โรงพยาบาลตามรอบวันที่ออกข้อมูล
 
-## Build your site
+:::info ตัวอย่างชื่อไฟล์
+**TMLTRFYYYYMMDD** โดย YYYYMMDD คือวันที่ของรอบ release เช่น **TMLTRF20260514**
+:::
 
-Build your site **for production**:
+ภายในชุดไฟล์จะประกอบด้วย:
 
-```bash
-npm run build
+| ส่วนประกอบ | รายละเอียด |
+|---|---|
+| 📁 **Snapshot** | โฟลเดอร์หลักส่วนที่ 1 |
+| 📁 **Full** | โฟลเดอร์หลักส่วนที่ 2 |
+| 📄 **TMLT-Manual.pdf** | ไฟล์คู่มือการใช้งาน |
+| 📄 **Changelog.xlsx** | ไฟล์บันทึกการเปลี่ยนแปลง |
+
+
+
+## 1. ภาพรวมโครงสร้างในโฟลเดอร์ (Release File Structure)
+
+```
+TMLTRFYYYYMMDD
+│
+├── 📁 Snapshot
+│   ├── TMLT_Core_Snapshot_YYYYMMDD.xlsx
+│   ├── TMLT_Concept_Snapshot_YYYYMMDD.xlsx
+│   ├── TMLT_Description_Snapshot_YYYYMMDD.xlsx
+│   ├── TMLT_PartLink_Snapshot_YYYYMMDD.xlsx
+│   ├── TMLT_PanelMember_Snapshot_YYYYMMDD.xlsx
+│   └── TMLT_Extra_Snapshot_YYYYMMDD.xlsx
+│
+├── 📁 Full
+│   ├── TMLT_Concept_Full_YYYYMMDD.xlsx
+│   ├── TMLT_Description_Full_YYYYMMDD.xlsx
+│   ├── TMLT_Extra_Full_YYYYMMDD.xlsx
+│   ├── TMLT_Panel_Full_YYYYMMDD.xlsx
+│   ├── TMLT_PanelMember_Full_YYYYMMDD.xlsx
+│   └── TMLT_PartLink_Full_YYYYMMDD.xlsx
+│
+├── 📄 TMLT-Manual.pdf
+└── 📄 TMLT_Change_Log_YYYYMMDD.xlsx
 ```
 
-The static files are generated in the `build` folder.
 
-## Deploy your site
+## 2. TMLT Snapshot ประกอบด้วย
 
-Test your production build locally:
+### 2.1 TMLT_Core_Snapshot_YYYYMMDD
 
-```bash
-npm run serve
-```
+ไฟล์นี้เป็นไฟล์หลักที่รวมข้อมูลสำคัญของรหัส TMLT ไว้ในไฟล์เดียว เหมาะสำหรับโรงพยาบาลใช้เปิดดู ค้นหารหัส TMLT เพื่อนำไป Mapping ในไฟล์มีรายละเอียด ดังนี้
 
-The `build` folder is now served at [http://localhost:3000/](http://localhost:3000/).
+| Field | คำอธิบาย |
+|---|---|
+| TMLTID | รหัส TMLT |
+| Status | สถานะของรายการ เช่น Active หรือ Inactive |
+| Type | ประเภทของรายการ เช่น Item หรือ Panel |
+| FSN | Fully Specified Name หรือชื่อเต็มมาตรฐานที่ระบุรายละเอียดครบทุกองค์ประกอบ |
+| Synonym | ชื่อเรียกอื่นของรายการตรวจ |
+| Component | สิ่งที่ตรวจวัด เช่น Glucose, Creatinine, Hemoglobin |
+| Scale | ลักษณะการรายงานผล เช่น เชิงปริมาณ เชิงคุณภาพ หรือ ordinal |
+| Unit | หน่วยของผลตรวจ |
+| Specimen | ชนิดสิ่งส่งตรวจ เช่น Serum, Plasma, Urine, Whole blood |
+| Method | วิธีการตรวจ หากมีการระบุ |
+| LOINC | รหัสอ้างอิง LOINC |
+| CGDCode | รหัส CGD |
+| CGDName | ชื่อรายการตามข้อมูลอ้างอิงของกรมบัญชีกลาง |
+| CGDPrice | ราคาหรือข้อมูลตามประกาศกรมบัญชีกลาง |
+| Created | วันที่สร้างรายการ |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
 
-You can now deploy the `build` folder **almost anywhere** easily, **for free** or very small cost (read the **[Deployment Guide](https://docusaurus.io/docs/deployment)**).
+
+### 2.2 TMLT_Concept_Snapshot_YYYYMMDD.xlsx
+
+ไฟล์นี้ใช้แสดงรายการ concept ของ TMLT ว่าแต่ละรหัสเป็นประเภทใด เช่น Item, Panel หรือ Part ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| TMLTID | รหัส TMLT |
+| Type | ประเภทของ concept เช่น Item, Panel หรือ Part |
+| Status | สถานะของ concept เช่น Active หรือ Inactive |
+| Created | วันที่สร้าง concept |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
+
+### 2.3 TMLT_Description_Snapshot_YYYYMMDD.xlsx
+
+ไฟล์นี้ใช้เก็บชื่อหรือคำอธิบายของ TMLT แต่ละรายการ เช่น ชื่อเต็มตามมาตรฐาน ชื่อเรียกอื่น และชื่อที่ใช้ทั่วไป ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| DescriptionId | รหัสของ description |
+| TMLTID | รหัส TMLT ที่ description นี้อ้างถึง |
+| Term | คำหรือชื่อของรายการตรวจ |
+| Type | ประเภทของชื่อ เช่น FSN, SYN, Long Common Name |
+| Status | สถานะของ description เช่น Active หรือ Inactive |
+| Created | วันที่สร้างข้อมูล |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
+
+### 2.4 TMLT_PartLink_Snapshot_YYYYMMDD.xlsx
+
+ไฟล์นี้ใช้บอกว่า Item หนึ่งรายการประกอบด้วย Part อะไรบ้าง เช่น component, specimen, scale, unit หรือ method ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| RelationID | รหัสความสัมพันธ์ระหว่าง item กับ part |
+| TMLTID | รหัส TMLT ของ item |
+| PartID | รหัส TMLT Part ที่เป็นส่วนประกอบของ item |
+| Type | ประเภทของ part เช่น Component, Specimen, Scale, Unit, Method |
+| Status | สถานะ เช่น Active หรือ Inactive |
+| Created | วันที่สร้างข้อมูล |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
+
+### 2.5 TMLT_PanelMember_Snapshot_YYYYMMDD.xlsx
+
+ไฟล์นี้ใช้บอกว่า Panel หนึ่งรายการประกอบด้วย Item อะไรบ้าง ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| MemberID | รหัสสมาชิกของ panel |
+| ParentTMLTID | รหัส TMLT ของ Panel |
+| ChildTMLTID | รหัส TMLT ที่อยู่ภายใต้ Panel นั้น |
+| Status | สถานะของสมาชิกใน panel เช่น Active หรือ Inactive |
+| Created | วันที่สร้างข้อมูล |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
+
+### 2.6 TMLT_Extra_Snapshot_YYYYMMDD.xlsx
+
+ไฟล์นี้ใช้เก็บข้อมูลอ้างอิงเพิ่มเติมของ TMLT เช่น LOINC, CGDCode, CGDTerm, CGDPrice หรือ SNOMED ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| ExtraID | รหัสข้อมูลเพิ่มเติม |
+| TMLTID | รหัส TMLT ที่ข้อมูลเพิ่มเติมนี้อ้างถึง |
+| Type | ประเภทของข้อมูล เช่น LOINC, CGDCode, CGDTerm, CGDPrice, SNOMED |
+| Value | ค่าของข้อมูลตามประเภทนั้น |
+| Status | สถานะของข้อมูล เช่น Active หรือ Inactive |
+| Created | วันที่สร้างข้อมูล |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
+
+## 3. TMLT Full ประกอบด้วย
+
+### 3.1 TMLT_Concept_Full_YYYYMMDD.xlsx
+
+ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| TMLTID | รหัส TMLT |
+| Type | ประเภทของรายการ เช่น Item หรือ Panel |
+| Status | สถานะของรายการ เช่น Active หรือ Inactive |
+| Created | วันที่สร้างรายการ |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
+
+### 3.2 TMLT_Description_Full_YYYYMMDD.xlsx
+
+ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| DescriptionId | รหัสของ description |
+| TMLTID | รหัส TMLT ที่ description นี้อ้างถึง |
+| Term | คำหรือชื่อของรายการตรวจ |
+| Type | ประเภทของชื่อ เช่น FSN, SYN, Long Common Name |
+| Status | สถานะของ description |
+| Created | วันที่สร้างข้อมูล |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
+
+### 3.3 TMLT_Extra_Full_YYYYMMDD.xlsx
+
+ไฟล์นี้ใช้เก็บข้อมูลอ้างอิงเพิ่มเติมของ TMLT ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| ExtraID | รหัสข้อมูลเพิ่มเติม |
+| TMLTID | รหัส TMLT ที่ข้อมูลเพิ่มเติมนี้อ้างถึง |
+| Type | ประเภทของข้อมูล เช่น LOINC, CGDCode, CGDTerm, CGDPrice, SNOMED |
+| Value | ค่าของข้อมูลตามประเภทนั้น |
+| Status | สถานะของข้อมูล เช่น Active |
+| Created | วันที่สร้างข้อมูล |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
+
+### 3.4 TMLT_PanelMember_Full_YYYYMMDD.xlsx
+
+ไฟล์นี้ใช้บอกว่า Panel หนึ่งรายการประกอบด้วย Item อะไรบ้าง ในชุดข้อมูลแบบเต็ม ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| MemberID | รหัสสมาชิกของ panel |
+| ParentTMLTID | รหัส TMLT ของ Panel |
+| ChildTMLTID | รหัส TMLT ที่อยู่ภายใต้ Panel นั้น |
+| Status | สถานะของสมาชิกใน panel เช่น Active หรือ Inactive |
+| Created | วันที่สร้างข้อมูล |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
+
+### 3.5 TMLT_PartLink_Full_YYYYMMDD.xlsx
+
+ไฟล์นี้ใช้บอกว่า Item หนึ่งรายการประกอบด้วย Part อะไรบ้าง ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| RelationID | รหัสความสัมพันธ์ระหว่าง item กับ part |
+| TMLTID | รหัส TMLT ของ item |
+| PartID | รหัส TMLT Part ที่เป็นส่วนประกอบของ item |
+| Type | ประเภทของ part เช่น Component, Specimen, Scale, Unit, Method |
+| Status | สถานะของความสัมพันธ์ เช่น Active หรือ Inactive |
+| Created | วันที่สร้างข้อมูล |
+| LastUpdated | วันที่ปรับปรุงข้อมูลล่าสุด |
+
+---
+
+## 4. Changelog_YYYYMMDD.xlsx
+
+ไฟล์นี้ใช้สำหรับแสดงรายการที่มีการเปลี่ยนแปลงในรอบ Release นั้นๆ เพื่อให้โรงพยาบาลสามารถตรวจสอบได้ว่า TMLT ใดมีการแก้ไขข้อมูล เช่น เปลี่ยนประเภทจาก Item เป็น Panel, แก้ไขชื่อ, แก้ไข Component, Specimen, Method หรือข้อมูลอ้างอิงอื่นๆ หรือมี TMLT ใหม่รหัสใดบ้าง ในไฟล์มีรายละเอียด ดังนี้
+
+| Field | คำอธิบาย |
+|---|---|
+| RecType | ประเภทของ record เช่น **BEFORE** คือข้อมูลเดิมก่อนแก้ไข และ **CHANGED** คือข้อมูลหลังแก้ไข |
+| TMLTID | รหัส TMLT ที่มีการเปลี่ยนแปลง |
+| Status | สถานะของรายการ เช่น ACTIVE หรือ INACTIVE |
+| LongCommonName | ชื่อที่อ่านง่ายหรือชื่อใช้งานทั่วไปของรายการตรวจ |
+| Type | ประเภทของรายการ เช่น ITEM หรือ PANEL |
+| FSN | Fully Specified Name หรือชื่อเต็มมาตรฐาน |
+| Synonym | ชื่อเรียกอื่นของรายการตรวจ |
+| Component | สิ่งที่ตรวจวัด |
+| Scale | ลักษณะการรายงานผล |
+| Unit | หน่วยของผลตรวจ |
+| Specimen | ชนิดสิ่งส่งตรวจ |
+| Method | วิธีการตรวจ |
+| LOINC | รหัสอ้างอิง LOINC |
+| CGDCode | รหัส CGD |
+| Version | Version หรือรอบข้อมูลที่เกี่ยวข้องกับการเปลี่ยนแปลง |

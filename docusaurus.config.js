@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Tutorial',
   tagline: '',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/touch-icon.png',
 
   future: {
     v4: false,
@@ -41,27 +41,32 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      image: 'img/docusaurus-social-card.jpg',
-      colorMode: {
-        respectPrefersColorScheme: true,
+ themeConfig:
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  ({
+    image: 'img/docusaurus-social-card.jpg',
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
+    docs: {
+      sidebar: {
+        hideable: true,  // ← เพิ่มตรงนี้
       },
-      navbar: {
-        title: 'Tutorial',
-        logo: {
-          alt: 'Logo',
-          src: 'img/TMLT_main.png',
-        },
-        items: [],  // ← เอา Tutorial ออกจาก navbar แล้ว
+    },
+    navbar: {
+      title: 'Tutorial',
+      logo: {
+        alt: 'Logo',
+        src: 'img/TMLT_main.png',
       },
-      footer: undefined,             // ← เอา footer ออก
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
-    }),
+      items: [],
+    },
+    footer: undefined,
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+  }),
 };
 
 export default config;

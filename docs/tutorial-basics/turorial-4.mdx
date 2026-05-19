@@ -1,0 +1,51 @@
+---
+sidebar_position: 4
+title: บทที่ 4 การขอรหัส TMLT
+---
+
+export const Highlight = ({children, color, href}) => (
+  <a href={href} target="_blank" rel="noopener noreferrer" style={{backgroundColor: color, color: '#fff', padding: '4px 12px', borderRadius: '6px', fontWeight: 'bold', textDecoration: 'none'}}>{children}</a>
+);
+
+# บทที่ 4 การขอรหัส TMLT
+
+## ขั้นตอนการดำเนินการขอรหัสใหม่ในบัญชีข้อมูลและรหัสมาตรฐานการตรวจทางห้องปฏิบัติการทางการแพทย์ไทย (TMLT)
+
+1. ตรวจสอบรายการที่ต้องการขอสร้างใหม่ในบัญชีข้อมูลและรหัสมาตรฐานการตรวจทางห้องปฏิบัติการทางการแพทย์ไทย ว่ามีรหัสอยู่ก่อนแล้วหรือไม่ จาก TMTL Release File เวอร์ชั่นล่าสุด
+
+   หรือ ตรวจสอบผ่านระบบ <Highlight color="#A83733" href="https://tmltconnect.this.or.th/">TMLT Browser</Highlight>
+
+2. หากไม่พบรายการ ให้ขอเพิ่มผ่านแบบฟอร์มการขอรหัส TMLT หรือผ่าน email
+
+   2.1. แบบฟอร์มการขอรหัส (แนบ link)
+
+   2.2. การส่งขอผ่านทาง email ให้ส่งมาที่ [tmlt@this.or.th](mailto:tmlt@this.or.th) โดยให้ระบุหัวข้อ email คือ **รหัสสถานพยาบาล+ขอรหัส TMLT การทดสอบ (XXX)**
+
+   :::tip ตัวอย่าง
+   **55555 ขอรหัส TMLT การทดสอบ Hantavirus**
+   :::
+
+3. ระบุข้อมูลให้ครบถ้วน และแนบเอกสารดังต่อไปนี้
+
+   3.1. ระบุหน่วยบริการที่ต้องการขอรหัส เช่น **55555**
+
+   3.2. อธิบายรายละเอียดการตรวจของรหัสดังกล่าว
+
+   3.3. ระบุประเภทเป็น **Panel** หรือ **Item** หากการทดสอบเป็น Panel ให้ระบุรายการ Item ทั้งหมดมาด้วย
+
+   3.4. ระบุ **Component** คือ สิ่งที่ต้องการตรวจวัด เป็นการตรวจเพื่อหาอะไร เช่น ตรวจ Glucose, ตรวจหาเชื้อ Bacteria
+
+   3.5. ระบุชนิดของการวัด หรือรูปแบบการรายงานผล **(Scale)**
+
+   | Scale | ความหมาย | ตัวอย่าง |
+   |---|---|---|
+   | Quantitative | การรายงานผลเป็นค่าตัวเลข สัดส่วน จำนวนจริง หรือช่วงจำนวน | "7", "-7.4", "&lt;10", "1-10", "1:256" |
+   | Semi-Quantitative | ผลการทดสอบเชิงกึ่งปริมาณ | titer |
+   | Ordinal | การรายงานผลที่มีการเรียงลำดับ | Positive, Negative, 1+, 2+, Detected |
+   | Nominal | การรายงานชื่อเชื้อหรือลักษณะ | yellow, clear, bloody |
+   | Quantitative or Ordinal | รายงานผลได้ทั้งแบบ Ord หรือ Qn | antimicrobial susceptibility |
+   | Narrative | การรายงานผลแบบคำบรรยาย | Gross หรือ microscopic ของ Pathological Specimens |
+   | Document | การรายงานผลหลายรูปแบบ | XML, คำบรรยาย |
+   | N/A | การรายงานผลที่มีหลายรูปแบบ | — |
+
+   3.6. แนบเอกสารที่เกี่ยวข้อง เช่น leaflet ตัวอย่างใบรายงานผล เป็นต้น
