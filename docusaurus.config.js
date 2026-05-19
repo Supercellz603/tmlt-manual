@@ -3,7 +3,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Tutorial',
+  title: 'คู่มือการใช้งานโปรแกรม TMLT Mapping',
   tagline: '',
   favicon: 'img/TMLT_icon.ico',
 
