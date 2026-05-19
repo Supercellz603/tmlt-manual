@@ -8,4 +8,4 @@
 4. git push origin main
 
 ## URL เว็บไซต์
-https://Supercellz603.github.io/my-docs/
+https://supercellz603.github.io/tmlt-manual/
