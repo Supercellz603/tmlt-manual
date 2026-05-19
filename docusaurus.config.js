@@ -12,10 +12,10 @@ const config = {
   },
 
   url: 'https://Supercellz603.github.io',
-  baseUrl: '/my-docs/',
+  baseUrl: '/tmlt-manual/',
 
   organizationName: 'Supercellz603',
-  projectName: 'my-docs',
+  projectName: 'tmlt-manual',
 
   onBrokenLinks: 'throw',
 
