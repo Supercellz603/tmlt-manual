@@ -44,7 +44,7 @@ const config = {
  themeConfig:
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   ({
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/tmlt-social-card.jpg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
