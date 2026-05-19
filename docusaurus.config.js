@@ -15,7 +15,7 @@ const config = {
   baseUrl: '/tmlt-manual/',
 
   organizationName: 'Supercellz603',
-  projectName: 'tmlt-manual',
+  projectName: 'my-docs',
 
   onBrokenLinks: 'throw',
 
