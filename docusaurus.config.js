@@ -11,8 +11,8 @@ const config = {
     v4: false,
   },
 
-  url: 'https://Supercellz603.github.io',
-  baseUrl: '/tmlt-manual/',
+  url: 'https://organ.this.or.th',
+  baseUrl: '/tmlt/',
 
   organizationName: 'Supercellz603',
   projectName: 'tmlt-manual',
