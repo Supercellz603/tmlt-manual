@@ -12,7 +12,7 @@ const config = {
   },
 
   url: 'https://organ.this.or.th',
-  baseUrl: '/tmlt/',
+  baseUrl: '/tmltdocs/',
 
   organizationName: 'Supercellz603',
   projectName: 'tmlt-manual',
