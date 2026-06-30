@@ -2,23 +2,119 @@
 sidebar_position: 2
 ---
 
-# บทที่ 2 	การเข้าใช้งานในระบบ
-
+# บทที่ 2 การเข้าใช้งานในระบบ
 
 ## 2.1 วิธีเข้าสู่ระบบ TMLT Mapping
+
 ในการเข้าสู่ระบบ TMLT Mapping ผู้ใช้งานสามารถเข้าใช้งานได้ 2 ช่องทาง:
 
 - ผ่านทางหน้าเว็บไซต์ **สำนักพัฒนามาตรฐานระบบข้อมูลสุขภาพไทย**
-- ผ่านทางลิงก์โดยตรง: **[https://this.or.th/service/tmlt/](https://this.or.th/service/tmlt/)**
+- ผ่านทางลิงก์โดยตรง: **[https://tmlt-mapping.this.or.th](https://tmlt-mapping.this.or.th)**
 
-info Single Sign-On (SSO)
+:::info Single Sign-On (SSO)
 เมื่อเลือกเข้าสู่ระบบ TMLT Mapping จะพบกับหน้าล็อคอินผ่านระบบการเข้าถึงบริการอิเล็กทรอนิกส์แบบรวมศูนย์ **(Single Sign-On)** ดังภาพต่อไปนี้
+:::
+
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/login.png').default} alt="หน้า login" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 2 แสดงหน้าจอ Log in เข้าสู่ระบบ TMLT
+  </figcaption>
+</figure>
+
+2.1.1. เมื่อลงชื่อเข้าใช้งานสำเร็จ จะเข้าสู่หน้าสร้าง mapping ใหม่ เป็นหน้าแรก ดังภาพ
+
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/Pic_2.png').default} alt="หน้าจอระบบ TMLT หลัง Login" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 3 แสดงหน้าจอระบบ TMLT หลังจาก Login สำเร็จ
+  </figcaption>
+</figure>
+
+2.1.2. ที่มุมซ้ายด้านล่างจะแสดง ชื่อ-นามสกุล ผู้ที่ log in เข้าใช้งาน และ ตำแหน่ง สามารถกดสัญลักษณ์ ∨ เพื่อดูรายละเอียดเพิ่มเติม โดยมีรายละเอียด ดังนี้ ชื่อ-นามสกุล รหัสสถานพยาบาล โรงพยาบาล อีเมล์ และสามารถกดแก้ไขโปรไฟล์ได้
+
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/pic_3.png').default} alt="รายละเอียดโปรไฟล์" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 4 แสดงรายละเอียดโปรไฟล์
+  </figcaption>
+</figure>
+
+:::tip
+หากเจ้าหน้าที่หน่วยบริการไม่มีชื่อผู้ใช้งาน ให้ลงทะเบียนเพื่อเข้าใช้งาน
+:::
+
+---
+
+## 2.2 การสมัครใช้งานระบบ TMLT Mapping
+
+2.2.1. กด **"ลงทะเบียน"** ระบบจะพาไปยังหน้ากรอกรายละเอียดการลงทะเบียน ดังภาพ
+
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/pic_4.png').default} alt="หน้าลงทะเบียน" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 5 แสดงรายละเอียดหน้าลงทะเบียน
+  </figcaption>
+</figure>
+
+2.2.2. กรอกข้อมูลให้ครบถ้วน ระบบจะส่งอีเมล์เข้าไปยังอีเมล์ที่ท่านลงทะเบียนเพื่อยืนยันตัวตน ดังภาพ
+
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/pic_5.png').default} alt="หน้ายืนยันอีเมล์" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 6 แสดงหน้ายืนยันอีเมล์
+  </figcaption>
+</figure>
+
+2.2.3. ไปที่อีเมล์ที่ท่านลงทะเบียน จะมีอีเมล์จาก **this@this.or.th** เพื่อกดยืนยันตัวตน ให้คลิก **"ลิงก์สำหรับการตรวจสอบที่อยู่อีเมล"** ดังภาพ
+
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/pic_6.png').default} alt="ตัวอย่างอีเมล์จากระบบ" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 7 แสดงตัวอย่างอีเมล์ที่ได้รับจากระบบ
+  </figcaption>
+</figure>
+
+2.2.4. เมื่อคลิก **"ลิงก์สำหรับการตรวจสอบที่อยู่อีเมล"** ระบบจะพากลับมายัง SSO เพื่อกรอกข้อมูล ให้กรอกข้อมูลที่จำเป็นให้ครบถ้วน (*) ดังภาพ
+
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/pic_7.png').default} alt="หน้าจอกรอกข้อมูล 1" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 8 แสดงตัวหน้าจอกรอกข้อมูล (1)
+  </figcaption>
+</figure>
+
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/pic_8.png').default} alt="หน้าจอกรอกข้อมูล 2" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 9 แสดงตัวหน้าจอกรอกข้อมูล (2)
+  </figcaption>
+</figure>
+
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/pic_9.png').default} alt="หน้าจอแนบไฟล์ยืนยัน" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 10 แสดงตัวหน้าจอแนบไฟล์ยืนยันว่าเป็นพนักงานในหน่วยบริการนั้นๆ
+  </figcaption>
+</figure>
 
 
-![หน้าlogin](/img/login.png)
-โดยเมื่อลงชื่อเข้าใช้งานสำเร็จ จะเข้าสู่หน้าสร้าง mapping ใหม่ เป็นหน้าแรก ดังภาพแสดงดังต่อไปนี้
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/pic_10.png').default} alt="หน้าจอตกลงและยืนยัน" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 11 แสดงตัวหน้าจอตกลงและยืนยันการเข้าใช้ TMLT
+  </figcaption>
+</figure>
 
-![Mapping ใหม่](/img/MappingNew.png)
-** หากเจ้าหน้าที่หน่วยบริการไม่มีชื่อผู้ใช้งาน ให้ลงทะเบียนเพื่อเข้าใช้งาน
+:::caution รอการอนุมัติ
+เมื่อกดยืนยัน รอให้ Admin ทำการ **Approve** จึงจะสามารถเข้าใช้งานระบบได้
+:::
 
-## 2.2.	การสมัครใช้งานระบบ TMLT mapping
+2.2.5. หลังจากกดยืนยัน ระบบจะแสดงหน้าจอรออนุมัติการเข้าใช้งาน ดังภาพ
+
+<figure style={{textAlign: 'center'}}>
+  <img src={require('./img/2/pic_11.png').default} alt="หน้าจอรออนุมัติ" style={{width: '100%'}} />
+  <figcaption style={{fontSize: '14px', color: '#555', marginTop: '8px'}}>
+    ภาพที่ 12 แสดงตัวหน้าจอรออนุมัติการเข้าใช้งาน
+  </figcaption>
+</figure>

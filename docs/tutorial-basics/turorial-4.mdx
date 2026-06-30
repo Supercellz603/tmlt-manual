@@ -13,17 +13,48 @@ export const Highlight = ({children, color, href}) => (
 
 1. ตรวจสอบรายการที่ต้องการขอสร้างใหม่ในบัญชีข้อมูลและรหัสมาตรฐานการตรวจทางห้องปฏิบัติการทางการแพทย์ไทย ว่ามีรหัสอยู่ก่อนแล้วหรือไม่ จาก TMTL Release File เวอร์ชั่นล่าสุด
 
-   หรือ ตรวจสอบผ่านระบบ <Highlight color="#A83733" href="https://tmltconnect.this.or.th/">TMLT Browser</Highlight>
+   หรือ ตรวจสอบผ่านระบบ <Highlight color="#A83733" href="https://tmlt-browser.this.or.th//">TMLT Browser</Highlight>
 
 2. หากไม่พบรายการ ให้ขอเพิ่มผ่านแบบฟอร์มการขอรหัส TMLT หรือผ่าน email
 
-   2.1. แบบฟอร์มการขอรหัส (แนบ link)
+   2.1. แบบฟอร์มการขอรหัส (https://this.or.th/tmlt-request/) แนะนำ
+
+<div style={{
+  background: 'linear-gradient(135deg, #A83733, #8B2E2B)',
+  borderRadius: '12px',
+  padding: '20px 24px',
+  margin: '24px 0',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  flexWrap: 'wrap',
+  gap: '12px',
+  boxShadow: '0 4px 14px rgba(168,55,51,0.3)'
+}}>
+  <div>
+    <p style={{margin: 0, fontSize: '12px', color: 'rgba(255,255,255,0.8)', fontWeight: 600, letterSpacing: '0.5px'}}>💡 แนะนำ</p>
+    <p style={{margin: '4px 0 0', fontSize: '16px', color: 'white', fontWeight: 700}}>
+      ต้องการขอรหัส TMLT ใหม่ หรือแก้ไขรหัสเดิม?
+    </p>
+  </div>
+  <a href="https://this.or.th/tmlt-request/" target="_blank" style={{
+    background: 'white',
+    color: '#A83733',
+    padding: '12px 28px',
+    borderRadius: '8px',
+    fontWeight: 800,
+    fontSize: '15px',
+    textDecoration: 'none',
+    whiteSpace: 'nowrap',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
+  }}>
+    📋 ไปที่แบบฟอร์มขอรหัส TMLT →
+  </a>
+</div>
 
    2.2. การส่งขอผ่านทาง email ให้ส่งมาที่ [tmlt@this.or.th](mailto:tmlt@this.or.th) โดยให้ระบุหัวข้อ email คือ **รหัสสถานพยาบาล+ขอรหัส TMLT การทดสอบ (XXX)**
 
-   :::tip ตัวอย่าง
-   **55555 ขอรหัส TMLT การทดสอบ Hantavirus**
-   :::
+   ตัวอย่างเช่น **55555 ขอรหัส TMLT การทดสอบ Hantavirus**
 
 3. ระบุข้อมูลให้ครบถ้วน และแนบเอกสารดังต่อไปนี้
 
