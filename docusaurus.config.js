@@ -30,10 +30,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',        // ← เปิดหน้า docs เป็นหน้าแรกเลย
+          routeBasePath: '/',
           sidebarPath: './sidebars.js',
         },
-        blog: false,                 // ← ปิด blog ออก
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -41,7 +41,24 @@ const config = {
     ],
   ],
 
- themeConfig:
+  plugins: [
+    [
+      'docusaurus-plugin-image-zoom',
+      {
+        selector: '.markdown img',
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)',
+        },
+        config: {
+          margin: 24,
+          scrollOffset: 0,
+        },
+      },
+    ],
+  ],
+
+  themeConfig:
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   ({
     image: 'img/tmlt-social-card.jpg',
@@ -50,7 +67,7 @@ const config = {
     },
     docs: {
       sidebar: {
-        hideable: true,  // ← เพิ่มตรงนี้
+        hideable: true,
       },
     },
     navbar: {
